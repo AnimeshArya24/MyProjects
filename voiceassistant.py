@@ -6,10 +6,10 @@ Created on Wed Oct 27 20:22:55 2021
 """
 import pyttsx3
 #import smtplib
-import os
+#import os
 #import pyaudio
 import cv2
-import subprocess
+#import subprocess
 import datetime
 import webbrowser
 import speech_recognition as ani
@@ -55,8 +55,8 @@ def greet():
     print('What should i call you sir?')
     speak('what should i call you sir?') 
     name=record().lower()
-    print('Hello '+name + '! I am Arya')
-    speak('hello  '+ name +"  I am aarya")
+    print('Hello '+name+ 'I I am Arya')
+    speak ('hello '+ name +" I am aarya")
     print("How can i help you?")
     speak("How can i help you?")
 
@@ -64,10 +64,10 @@ def greet():
 def respond(store):
     
     if 'what is your name' in store:
-        print('my name is arya')
-        speak('my name is aarya')
+        print('my name is Lilli')
+        speak('my name is LIlli')
         
-    elif 'what time is it' in store:
+    elif 'time' in store:
         print(ctime())
         speak(ctime())
         
@@ -99,7 +99,7 @@ def respond(store):
         query=record().lower()
         webbrowser.open("https://www.google.co.in/search?q=" + query)
         
-    elif 'picture' in store:
+    elif "take" and "photo" and "picture" in store:
        while 1:
            vid=cv2.VideoCapture(0)
            ret, frame= vid.read()
@@ -143,16 +143,26 @@ def respond(store):
         joke=pyjokes.get_joke(language='en', category='all')
         print(joke)
         speak(joke)
-            
-    elif 'Open Chrome' in store:
-        print('opening chrome...')
-        speak('opening chrome')
-        dir="C:/Program Files/Google/Chrome/Application/chrome.exe"
-        os.startfile(dir)
-        os.system(dir)
-        subprocess.Popen(dir)
-        subprocess.call(dir)
-       
+        
+    elif 'open lpu live' in store:
+        print('you are redirecting to LPU LIVE')
+        speak('you are redirecting to LPU LIVE')
+        webbrowser.open("lpulive.lpu.in")
+
+    elif 'open o a s' in store:
+        print('you are redirecting to OAS')
+        speak('you are redirecting to OAS')
+        webbrowser.open("oas.lpu.in/")
+
+    elif 'open u m s' in store:
+        print('you are redirecting to UMS')
+        speak('you are redirecting to UMS')
+        webbrowser.open("ums.lpu.in/lpuums/")
+
+    elif 'open my class' in store:
+        print('you are redirecting to My Class')
+        speak('you are redirecting to My Class')
+        webbrowser.open("myclass.lpu.in/")  
 
 greet()
 store = record().lower()
