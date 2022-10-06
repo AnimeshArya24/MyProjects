@@ -1,0 +1,1 @@
+Hello everyone this is Animesh Arya. This work is a TicTacToe game with AI. This AI will never loose. You can run this code on ur compilers and challage the AI.
